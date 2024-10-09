@@ -24,6 +24,8 @@ fire100 <- inflow %>%
            PHS_frp = PHS_frp * 1.5, # highest for most intense burn, linear
            OGM_doc = OGM_doc * 0.315) # half the highest for 100% burn, nonlinear 
 
+write_csv(fire100, file = "sim/inputs/inflowfire100.csv")
+
 # DATAFRAME FOR 50% BURN INTENSITY 
 fire50 <- inflow %>% 
   mutate(FLOW = FLOW * 1.2, # half the highest for 50% burn, linear
