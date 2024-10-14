@@ -6,12 +6,8 @@
 *.dylib
 *.Rproj
 *.nc
-TMWB_data
-R_old
-Met_final_2015_2019.csv
-Data_Output
-NLDASdata
 output
-Raw_Data
-glm
-figures
+sims/*
+!sims/baseline
+plots/*
+!plots/README.md

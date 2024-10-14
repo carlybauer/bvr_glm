@@ -1,8 +1,8 @@
 # run the model
-GLM3r::run_glm()
+GLM3r::run_glm(sim_folder = "./sims/baseline")
 
 # set nml file
-nc_file <- file.path('output/output.nc') 
+nc_file <- file.path('sims/baseline/output/output.nc') 
 
 # install glmtools
 library(devtools)
