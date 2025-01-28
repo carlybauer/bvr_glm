@@ -1,5 +1,5 @@
 &aed_models
-   models = 'aed_sedflux','aed_tracer','aed_noncohesive','aed_oxygen','aed_carbon','aed_silica','aed_nitrogen','aed_phosphorus','aed_organic_matter','aed_phytoplankton','aed_totals','aed_zooplankton'
+   models = 'aed_sedflux','aed_tracer','aed_noncohesive','aed_oxygen','aed_carbon','aed_silica','aed_nitrogen','aed_phosphorus','aed_organic_matter','aed_phytoplankton','aed_totals'
 /
 &aed_sedflux
    sedflux_model = 'Constant2D'
@@ -234,15 +234,15 @@
    mag_link_variable = ''
    root_link_variable = ''
 /
-&aed_zooplankton
-   num_zoops = 3
-   the_zoops = 1, 2, 3
-   dn_target_variable = 'OGM_don'
-   pn_target_variable = 'OGM_pon'
-   dp_target_variable = 'OGM_dop'
-   pp_target_variable = 'OGM_pop'
-   dc_target_variable = 'OGM_doc'
-   pc_target_variable = 'OGM_poc'
-   dbase = 'aed/aed_zoop_pars.csv'
-   simZoopFeedback = .true.
-/
+!&aed_zooplankton
+!   num_zoops = 3
+!   the_zoops = 1, 2, 3
+!   dn_target_variable = 'OGM_don'
+!   pn_target_variable = 'OGM_pon'
+!   dp_target_variable = 'OGM_dop'
+!   pp_target_variable = 'OGM_pop'
+!   dc_target_variable = 'OGM_doc'
+!   pc_target_variable = 'OGM_poc'
+!   dbase = 'aed/aed_zoop_pars.csv'
+!   simZoopFeedback = .true.
+!/
