@@ -25,11 +25,11 @@ inflow <- read_csv("sims/baseline/inputs/inflow_baseline.csv")
 # DATAFRAME FOR 100% BURN INTENSITY 
 fire100 <- inflow %>% 
     mutate(#FLOW = FLOW * 1.4, #highest for most intense burn, linear
-           NIT_nit = NIT_nit *3.5, # highest for most intense burn, linear, Caldwell et al., 2020
-           PHS_frp = PHS_frp * 1.5) # highest for most intense burn, linear, Caldwell et al., 2020
-           #OGM_doc = OGM_doc * 0.315) # half the highest for 100% burn, nonlinear 
+           NIT_nit = NIT_nit *3.5, # increase of 250%, highest for most intense burn, linear, Caldwell et al., 2020
+           PHS_frp = PHS_frp * 1.5, # increase of 50%, highest for most intense burn, linear, Caldwell et al., 2020
+           OGM_doc = OGM_doc * 1.5925) # 237% increase in least burned , 0.25 this for 100% burn, nonlinear Caldwell et al., 2020
 
-write_csv(fire100, file = "sims/fire100/inputs/inflowfire100.csv")
+write_csv(fire100, file = "sims/fire100/inputs/inflow_fire100.csv")
 
 ggplot(fire100)+
   geom_point(aes(time, TEMP))
@@ -39,18 +39,18 @@ ggplot(inflow)+
 # DATAFRAME FOR 50% BURN INTENSITY 
 fire50 <- inflow %>% 
   mutate(#FLOW = FLOW * 1.2, # half the highest for 50% burn, linear
-         NIT_nit = NIT_nit *2.25, # half the highest for 50% burn, linear
-         PHS_frp = PHS_frp * 1.25) # half the highest for 50% burn, linear
-         #OGM_doc = OGM_doc * 0.63) # half the highest for 50% burn, nonlinear 
-write_csv(fire50, file = "sims/fire50/inputs/inflowfire50.csv" )
+         NIT_nit = NIT_nit *2.25, # 250*0.5 = 125/100 + 1  = 2.25 half the highest for 50% burn, linear
+         PHS_frp = PHS_frp * 1.25, # half the highest for 50% burn, linear
+         OGM_doc = OGM_doc * 2.185) # half the highest for 50% burn, nonlinear 
+write_csv(fire50, file = "sims/fire50/inputs/inflow_fire50.csv" )
 
 # DATAFRAME FOR 25% BURN INTENSITY 
 fire25 <- inflow %>% 
   mutate(#FLOW = FLOW * 1.1, # quarter the highest for 25% burn, linear
-         NIT_nit = NIT_nit *0.875, # quarter the highest for 25% burn, linear
-         PHS_frp = PHS_frp * 0.375) # quarter the highest for 25% burn, linear
-        #OGM_doc = OGM_doc * 1.26) # highest for 25% burn, nonlinear 
-write_csv(fire25, file = "sims/fire25/inputs/inflowfire25.csv")
+         NIT_nit = NIT_nit *1.625, # 250 * 0.25 = 62.5/100 + 1 = quarter the highest for 25% burn, linear
+         PHS_frp = PHS_frp * 1.125, # quarter the highest for 25% burn, linear
+        OGM_doc = OGM_doc * 3.37) # highest for 25% burn, nonlinear 
+write_csv(fire25, file = "sims/fire25/inputs/inflow_fire25.csv")
 
 
 

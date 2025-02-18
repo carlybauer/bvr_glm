@@ -29,6 +29,8 @@ scenario_folder_names <- c("baseline",
 # # set temperature increments - THIS WILL NEED TO BE EDITED!!
 # temp_increments <- c(1,2,3,5)
 # 
+
+## Sets nml for correct inflow file 
  for (j in 1:length(scenario_folder_names)){
 #   
   # get met data filepath and read in met data
@@ -51,7 +53,7 @@ scenario_folder_names <- c("baseline",
 }
 
 
-# run and plot each scenario
+# run glmaed for each scenario 
 
 for (j in 1:length(scenario_folder_names)){
   
@@ -73,7 +75,7 @@ for (j in 1:length(scenario_folder_names)){
 }
 
 
-#just plot
+#just plot for each scenario
 for (j in 1:length(scenario_folder_names)){
   
   nc_file <- file.path(paste0("sims/",scenario_folder_names[j],"/output/output.nc")) 
